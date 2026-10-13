@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07110c">
+
+    <title>Community | Koolaperiyavan Vilai</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+
+    <style>
+        /* =====================================
+           COMMUNITY PAGE
+           PREMIUM BLACK + GREEN + GOLD
+        ===================================== */
+
+        .community-section {
+            padding: 55px 6% 75px;
+            background: #07110c;
+        }
+
+        /* HEADING */
+
+        .community-heading {
+            text-align: center;
+            margin-bottom: 42px;
+        }
+
+        .community-heading .eyebrow {
+            display: inline-block;
+            color: #e7bd53;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 4px;
+        }
+
+        .community-heading h2 {
+            color: #ffffff;
+            font-size: clamp(30px, 4vw, 42px);
+            margin: 22px 0 15px;
+        }
+
+        .community-heading h2 span {
+            color: #e7bd53;
+        }
+
+        .community-heading p {
+            color: #d0d8d1;
+            font-size: 16px;
+            line-height: 1.9;
+            margin: 0 auto;
+            max-width: 750px;
+        }
+
+        /* FOUR BOX GRID */
+
+        .community-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        /* CARD */
+
+        .community-card {
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+
+            background: linear-gradient(
+                145deg,
+                #10251a,
+                #09150e
+            );
+
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 18px;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .community-card:hover {
+            transform: translateY(-8px);
+            border-color: #e7bd53;
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.35),
+                0 0 18px rgba(212, 175, 55, 0.08);
+        }
+
+        /* IMAGE */
+
+        .community-image-wrap {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: #14291c;
+        }
+
+        .community-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+
+            transition: transform 0.6s ease;
+        }
+
+        .community-card:hover .community-image {
+            transform: scale(1.08);
+        }
+
+        /* IMAGE BOTTOM GOLD LINE */
+
+        .community-image-wrap::after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 100%;
+
+            background: linear-gradient(
+                90deg,
+                #a47c18,
+                #f4d778,
+                #a47c18
+            );
+        }
+
+        /* CONTENT */
+
+        .community-content {
+            position: relative;
+            padding: 22px 20px 25px;
+            min-height: 145px;
+        }
+
+        .community-content::after {
+            content: "";
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            right: -50px;
+            bottom: -50px;
+
+            background: rgba(212, 175, 55, 0.06);
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+        .community-content h3 {
+            position: relative;
+            z-index: 1;
+
+            color: #f5cc5d;
+            font-size: 20px;
+            font-weight: 800;
+
+            margin: 0 0 13px;
+        }
+
+        .community-content p {
+            position: relative;
+            z-index: 1;
+
+            color: #d2dbd4;
+            font-size: 14px;
+            line-height: 1.9;
+
+            margin: 0;
+        }
+
+        /* COMMUNITY BANNER */
+
+        .community-banner {
+            max-width: 1150px;
+            margin: 20px auto 0;
+
+            padding: 38px 24px;
+            text-align: center;
+
+            background: linear-gradient(
+                120deg,
+                #10251a,
+                #172b1c,
+                #0a1710
+            );
+
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 18px;
+        }
+
+        .community-banner .eyebrow {
+            color: #e7bd53;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .community-banner h2 {
+            color: #ffffff;
+            font-size: clamp(25px, 4vw, 34px);
+            margin: 18px 0 12px;
+        }
+
+        .community-banner h2 span {
+            color: #e7bd53;
+        }
+
+        .community-banner p {
+            color: #d0d8d1;
+            line-height: 1.9;
+            margin: 0 0 24px;
+        }
+
+        .community-btn {
+            display: inline-block;
+            padding: 13px 25px;
+
+            color: #07110c;
+            background: linear-gradient(
+                135deg,
+                #f0d47b,
+                #d4af37
+            );
+
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+
+            transition: 0.3s ease;
+        }
+
+        .community-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(212, 175, 55, 0.2);
+        }
+
+        /* TABLET */
+
+        @media (max-width: 1000px) {
+            .community-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+            }
+
+            .community-image-wrap {
+                height: 220px;
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 550px) {
+            .community-section {
+                padding: 42px 17px 50px;
+            }
+
+            .community-heading {
+                margin-bottom: 30px;
+            }
+
+            .community-heading .eyebrow {
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            .community-heading p {
+                font-size: 14px;
+            }
+
+            .community-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .community-image-wrap {
+                height: 230px;
+            }
+
+            .community-content {
+                min-height: auto;
+                padding: 22px;
+            }
+
+            .community-content h3 {
+                font-size: 20px;
+            }
+
+            .community-content p {
+                font-size: 14px;
+            }
+
+            .community-banner {
+                padding: 30px 18px;
+            }
+        }
+
+        /* REDUCED MOTION */
+
+        @media (prefers-reduced-motion: reduce) {
+            .community-card,
+            .community-image,
+            .community-btn {
+                transition: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <a class="brand" href="index.html">
+
+            <img
+                src="logo.png"
+                alt="Logo"
+                onerror="this.style.display='none'"
+            >
+
+            <span>
+                KOOLAPERIYAVAN <b>VILAI</b>
+            </span>
+
+        </a>
+
+        <button
+            class="menu-toggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="main-nav"
+        >
+            ☰
+        </button>
+
+        <nav class="main-nav" id="main-nav">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a class="active" href="community.html">Community</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="festival.html">Festival</a>
+            <a href="memories.html">Memories</a>
+            <a href="announcements.html">News</a>
+            <a href="location.html">Location</a>
+            <a href="instagram.html">Instagram</a>
+            <a href="video.html">Video</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- COMMUNITY SECTION -->
+
+        <section class="community-section">
+
+            <div class="community-heading">
+
+                <span class="eyebrow">
+                    TOGETHER WE GROW
+                </span>
+
+                <h2>
+                    Stronger <span>Together</span>
+                </h2>
+
+                <p>
+                    நம் ஊர் மக்களின் ஒற்றுமையையும் நல்ல
+                    முயற்சிகளையும் கொண்டாடுவோம்.
+                </p>
+
+            </div>
+
+
+            <!-- FOUR IMAGE BOXES -->
+
+            <div class="community-grid">
+
+
+                <!-- BOX 1: VILLAGE UNITY -->
+
+                <article class="community-card">
+
+                    <div class="community-image-wrap">
+
+                        <img
+                            class="community-image"
+                            src="village unity.jpeg"
+                            alt="Village Unity - ஊர் மக்களின் ஒற்றுமை"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="community-content">
+
+                        <h3>Village Unity</h3>
+
+                        <p>
+                            ஊர் மக்களின் ஒற்றுமை மற்றும்
+                            சமூகப் பங்களிப்பு.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BOX 2: FRIENDSHIP -->
+
+                <article class="community-card">
+
+                    <div class="community-image-wrap">
+
+                        <img
+                            class="community-image"
+                            src="arun.jpg"
+                            alt="Friendship - நண்பர்களின் நட்பு"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="community-content">
+
+                        <h3>Friendship</h3>
+
+                        <p>
+                            நண்பர்களுடன் பகிர்ந்து கொள்ளும்
+                            இனிய தருணங்கள்.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BOX 3: CELEBRATIONS -->
+
+                <article class="community-card">
+
+                    <div class="community-image-wrap">
+
+                        <img
+                            class="community-image"
+                            src="celebrations.jpg"
+                            alt="Village Celebrations - ஊர் திருவிழா"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="community-content">
+
+                        <h3>Celebrations</h3>
+
+                        <p>
+                            விழாக்கள் மற்றும் மகிழ்ச்சியான
+                            ஒன்றுகூடல்கள்.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BOX 4: GREEN VILLAGE -->
+
+                <article class="community-card">
+
+                    <div class="community-image-wrap">
+
+                        <img
+                            class="community-image"
+                            src="grrn.jpeg"
+                            alt="Green Village - பசுமையான கிராமம்"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="community-content">
+
+                        <h3>Green Village</h3>
+
+                        <p>
+                            மரம் நடுதல் மற்றும் ஊரைத்
+                            தூய்மையாக வைத்தல்.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- BOTTOM BANNER -->
+
+        <section class="community-banner">
+
+            <span class="eyebrow">
+                BE PART OF OUR VILLAGE
+            </span>
+
+            <h2>
+                நம் ஊர். <span>நம் பெருமை.</span>
+            </h2>
+
+            <p>
+                நம் சமூகத்தின் நல்ல முயற்சிகளை
+                ஒன்றிணைந்து முன்னெடுப்போம்.
+            </p>
+
+            <a
+                class="community-btn"
+                href="announcements.html"
+            >
+                Village Updates ↗
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <a class="footer-brand" href="index.html">
+            KOOLAPERIYAVAN <b>VILAI</b>
+        </a>
+
+        <p>
+            நம் மண் · நம் மக்கள் · நம் பாரம்பரியம்
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="festival.html">Festival</a>
+            <a href="location.html">Location</a>
+
+        </div>
+
+        <p class="copyright">
+            © <span class="current-year">2026</span>
+            Koolaperiyavan Vilai.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
